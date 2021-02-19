@@ -1,0 +1,89 @@
+main{
+    height : 100vh ;
+    overflow : hidden;
+    position: relative;
+    @include padding-media ;
+    .main {
+        height: 90% ;
+        @include flex-center(row);
+        .main-div{
+            transition: all 1.5s ease-in-out;
+            width : 50% ;
+            position: relative;
+            p , h1{
+                font-weight : bold; 
+            }
+            img{
+                width: 100%;
+            }
+        }
+        @include phone{
+            flex-direction : column-reverse ;
+            .main-div{
+                text-align : center; 
+                width : 100% ;
+                p {
+                    margin-top: 20px;
+                    font-size : 25px;
+                }
+                h1{
+                    font-size : 30px ; 
+                }
+            }
+        }
+        @include desktop {
+            p {
+                font-size: 36px;
+            }
+            h1:first-of-type{
+                font-size : 48px;
+                .main-name {
+                    font-size: 56px;
+                }
+            }
+        }
+        @include tablet {
+            p {
+                font-size: 30px;
+            }
+            h1:first-of-type{
+                font-size : 41px;
+                .main-name {
+                    font-size: 47px;
+                }
+            }
+        }
+    }
+    .main-media{
+        bottom: 0;
+        position: relative;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        a {
+            color :$bl-color ;
+            margin-right:  15px;
+            transition :color  0.5s ease-in-out ;
+            font-size: 31px;
+            &:hover{
+                color : $pr-color ; 
+            }
+        }
+    }
+}
+.main-img[data-scroll = in]{
+    animation: fadeIn 2.5s ease-in-out;
+    transform: translateX(0);
+}
+.main-img[data-scroll = out]{
+    animation: fadeOut 2.5s ease-in-out;
+    transform: translateX(100%);
+}
+.main-text[data-scroll = in]{
+    animation: fadeIn 2.5s ease-in-out;
+    transform: translateX(0);
+}
+.main-text[data-scroll = out]{
+    animation: fadeOut 2.5s ease-in-out;
+    transform: translateX(-100%);
+}

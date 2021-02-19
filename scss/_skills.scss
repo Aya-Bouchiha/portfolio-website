@@ -1,0 +1,55 @@
+/* skills section */
+article.skills-article{
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  .skills{
+    display: grid;
+    gap: 48px 20px;
+    @include phone{
+      grid-template-columns:  1fr ;
+    }
+    @include tablet{
+      grid-template-columns:  1fr 1fr 1fr;
+    }
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    .skill{
+      background : white ;
+      color : $pr-color;
+      padding : 25px 15px ;
+      transition: all 0.4s ease-in-out;
+      border-radius: 4px;
+      cursor: pointer ;
+      @include flex-between(column);
+      > div{
+        border-radius: 50%;
+        height : 70px ;
+        width : 70px;
+        margin-bottom : 10px ;
+        font-size : 92px ;
+        @include flex-center(unset);
+      }
+      h5{
+        font-size : 18px ;
+        text-transform: capitalize;
+      }
+      &:hover{
+        transform : scale(1.011) translateY(10px) ;
+        color : white ;
+        background-color: $pr-color;
+        > div i {
+          transition : transform  0.7s ease-in-out;
+          transform : rotate(360deg);
+        }
+      }
+    }
+  }
+}
+.skill[data-scroll = out]{
+  animation : fadeOut 2.5s ease-in-out;
+}
+.skill[data-scroll = in]{
+  animation : fadeIn 2.5s ease-in-out;  
+}

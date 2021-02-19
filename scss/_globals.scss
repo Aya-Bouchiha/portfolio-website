@@ -1,0 +1,77 @@
+
+*{
+    margin : 0 ;
+    padding : 0 ;
+    box-sizing: border-box;
+}
+body{
+  font-family : $font-family ;
+}
+::selection{
+    color : white ;
+    background : $pr-color ;
+}
+a {
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.active {
+    color : $pr-color ;
+}
+.title{
+    position: relative;
+    text-align : center ;
+    h4{
+        font-size: 27px;
+        color : $pr-color ;
+    }
+    i{
+        margin-left : 5px;
+    }
+    .line {
+        position: absolute;
+        left : 50% ;
+        width: 109px;
+        margin-top : 1px; 
+        height :3px;
+        background-color: $pr-color;
+        transform: translateX(-50%);
+    }
+}
+.button{
+    cursor: pointer ;
+    border-radius: 6px;
+    padding: 9.5px 23px;
+    transition :all  0.5s ease-in-out ;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    background : $pr-color;
+    &:hover{
+        opacity: 0.8;
+        transform: scale(1.07) translateY(7px);
+    }
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $pr-color;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:darken($color:  $pr-color, $amount: 4);
+}

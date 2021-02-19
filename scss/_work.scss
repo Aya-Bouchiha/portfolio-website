@@ -1,0 +1,34 @@
+/* work section */
+section.work-section{
+    min-height : 100vh ;
+    @include flex-between(column);
+    @include padding-media;
+    .works{
+        display: grid;
+        gap :20px 15px ;
+        grid-template-columns: 1fr 1fr  ;
+        @include phone{
+            grid-template-columns:  1fr ;
+            gap :25px 0 ;
+        }
+        .work{
+            cursor: pointer;
+            img{
+                transition: all 0.5s ease-in-out;
+                border-radius: 5px;
+                border : 1.4px solid #ebe8e8 ;
+                width : 100% ;
+            }
+            &:hover img{
+                z-index:  7 ;
+                transform : scale(1.04);
+            }
+        }
+    }
+}
+.work-img[data-scroll = in]{
+    animation: fadeIn 2s ease-in-out;
+}
+.work-img[data-scroll = out]{
+    animation: fadeOut 2s ease-in-out;
+}

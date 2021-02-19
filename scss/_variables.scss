@@ -1,0 +1,53 @@
+$font-family : 'Roboto Slab', serif; 
+$pr-color  :  #00BFA6;
+$bl-color : #130007 ;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$m-ph : 12px 30px  ;
+$m-ta : 17px 50px  ;
+$m-de : 20px 110px ;
+$m-de-x :0 110px ;
+$m-ta-x :0 50px;
+$m-ph-x :0 30px;
+$p-ph : 12px 30px ;
+$p-ta : 17px 50px ;
+$p-de : 20px 110px ;
+@mixin phone {
+    @media (max-width: #{$tablet-width - 1}) {
+      @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+    @content;
+    }
+}
+@mixin  padding-media {
+    @include desktop {
+        padding : $p-de ;
+    };
+    @include tablet{
+        padding: $p-ta;
+    }
+    @include phone {
+        padding : $p-ph;
+    }
+}
+@mixin flex-center($flex-dir){
+    display :flex; 
+    justify-content: center;
+    align-items : center ;
+    flex-direction: $flex-dir;
+}
+@mixin flex-between($flex-dir){
+    display :flex; 
+    justify-content: space-between;
+    align-items : center ;
+    flex-direction: $flex-dir;
+}

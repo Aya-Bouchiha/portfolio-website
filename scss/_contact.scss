@@ -1,0 +1,57 @@
+/* contact section */
+.contact-section{
+    margin-top : 40px;
+    min-height : 100vh;
+    @include flex-between(column);
+    justify-content: space-evenly;
+    color : $pr-color ;
+    position : relative;
+    overflow : hidden ;
+    @include padding-media ;
+    .text-conta{
+        h2{
+            text-align: center;
+            font-size: 51px;
+            font-weight : bold ;
+        }  font-size : 40px;
+    }
+    .contact{
+        width : 50%;
+        @include phone{
+            text-align : center;
+            width : 100%; 
+        }
+        img{
+            width : 100%;
+        }
+        a{
+            font-weight : 600 ;
+            margin-bottom: 20px;
+            transition : all 0.5s ease;
+            display : inline-block ;
+            color : $pr-color ;
+            @include phone{
+                font-size: 21px;
+            }
+            @media screen and (max-width : 340px) {
+                font-size : 17.2px ;
+                
+            }
+            @include tablet{
+                font-size : 28px;
+            }
+            @include desktop{ 
+                font-size : 30px;
+            }
+            &:hover{
+                color : $bl-color;
+            }
+        }
+    }
+    .contacts{
+        @include phone{
+            @include flex-between(column);
+        }
+        @include flex-between(row);
+    }
+}

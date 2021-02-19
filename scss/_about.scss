@@ -1,0 +1,56 @@
+/* about me section */
+section.about-me {
+    min-height : 100vh ;
+    .about-section{
+        @include flex-center(row) ;
+        @include padding-media ;
+        overflow: hidden;
+        .about-div {
+            transition: transform 1s ease-in-out ;
+            height: 90%;
+            width: 50%;
+            display: flex;
+            color : $bl-color ;
+            justify-content: center;
+            flex-direction: column;
+            img{
+                width : 100% ;
+            }
+            h1{
+                margin: 20px 0;
+                font-size: 27px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+            p{
+                letter-spacing: 0.5px;
+                word-spacing: 2.2px;
+                line-height: 24px;
+                font-weight : 500 ;
+            }
+        }
+        @include phone {
+            flex-direction: column-reverse;
+            .about-div{
+                margin-top: 27px;
+                width : 100% ;
+            }
+        }
+    }
+}
+#about-img[data-scroll = in]{
+    animation: fadeIn 2.5s ease-in-out;
+    transform: translateX(0);
+}
+#about-img[data-scroll = out]{
+    animation: fadeOut 2.5s ease-in-out;
+    transform: translateX(100%);
+}
+#par-about[data-scroll = in]{
+    animation: fadeIn 2.5s ease-in-out;
+    transform: translateX(0);
+}
+#par-about[data-scroll = out]{
+    animation: fadeOut 2.5s ease-in-out;
+    transform: translateX(-100%);
+}

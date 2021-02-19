@@ -1,0 +1,99 @@
+header{
+    height : 55px ;
+    z-index: 5;
+    background-color: white;
+    position : fixed ;
+    top : 0 ;
+    left : 0 ;
+    box-shadow: 1px -1px 3px $pr-color;
+    width: 100%;
+    nav{
+        @include flex-between(row) ;
+        height : 100% ;
+        @include padding-media ;
+        .nav-div {
+            .logo{
+                font-size : 21px ; 
+                text-transform: uppercase ;
+                color : $pr-color ;
+            }
+            ul {
+                transition: all 0.5s ease-in-out ;
+                @include flex-between(row) ;                
+            }
+            @include phone{
+                ul{
+                    display : none ;
+                }
+                ul.active {
+                    @include flex-between(column) ;
+                    position : fixed ;
+                    z-index: 4 ;    
+                    left: 0;
+                    height: 100%;
+                    background: white;
+                    top: 0;
+                    padding: 96px;
+                    width: 100%;
+                    animation: fadeIn 0.5s ease-in-out;       
+                }                                
+            }
+            
+            .list-nav{
+                font-size:20px ;
+                @include tablet{
+                    font-size : 17px;
+                    padding : 0 14px ;
+                }
+                font-weight: 600;
+                padding : 0 19px ;
+                span{
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    color : $bl-color ;
+                    &:hover{
+                        padding-bottom: 11px;
+                        color : $pr-color  ;  
+                        border-bottom: 4px solid;
+                    }
+                }
+
+            }
+        }
+        .hamberguer{
+            @include tablet {
+                display  : none ;
+            }
+            @include desktop {
+                display  : none ;
+            }
+            cursor: pointer;
+            display: flex;
+            z-index: 6;
+            flex-direction: column;
+            justify-content: space-around;
+            span{
+                transition: 0.5s;
+                margin: 2px;
+                height : 2.2px ;
+                width : 20px ;
+                display : inline-block ;
+                background: $pr-color;
+            }
+        }
+        .hamberguer.active{
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            span:first-child{
+                display: none;
+            }
+            span:nth-child(2){
+                transform:   rotate(45deg) translate(8px,1px);
+            }
+            span:last-of-type{
+                transform: rotate(-44deg) translate(4px,4px);;
+            }
+        }
+    }
+}
